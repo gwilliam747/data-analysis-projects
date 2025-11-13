@@ -27,13 +27,19 @@ while total_crew <= 0 or total_crew > 7:
 print(f"Crew members confirmed: {total_crew}.")
   
 # c. Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers.
-while fuel_level > 0:
+while fuel_level >= (total_crew * 100):
     fuel_level -= (total_crew * 100)
     shuttle_altitude += 50
     print(f"Fuel remaining: {fuel_level}.  Altitude {shuttle_altitude} kilometers.")
 
 
-
 # Exercise #2: Print the result with the phrase, The shuttle gained an altitude of ___ km and has ___ kg of fuel left. Fill in the blanks with the altitude and fuel level values.
 
+print(f"The shuttle gained an altitude of {shuttle_altitude} km and has {fuel_level} kg of fuel remaining")
+
 # If the altitude is 2000 km or higher, add “Orbit achieved!” Otherwise add, “Failed to reach orbit.”
+
+if shuttle_altitude >= 2000:
+    print("Orbit achieved!")
+else:
+    print("Failed to reach orbit.")
